@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f0;
+            margin-top: 100px;
+        }
+        h1 {
+            color: #ff3366;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        #yesBtn {
+            background-color: #ff4d88;
+            color: white;
+        }
+        #noBtn {
+            background-color: #cccccc;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will You Be My Valentine? 💖</h1>
+
+    <button id="yesBtn" onclick="yesClicked()">Yes 💘</button>
+    <button id="noBtn" onmouseover="moveButton()">No 😢</button>
+
+    <script>
+        function yesClicked() {
+            document.body.innerHTML = "<h1>Yay! 💕 You just made my day! 💖</h1>";
+        }
+
+        function moveButton() {
+            var button = document.getElementById("noBtn");
+            var x = Math.random() * (window.innerWidth - button.offsetWidth);
+            var y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+    </script>
+
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be My Valentine</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffdde1, #ffc3a0);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.container {
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#yesBtn {
+    background: white;
+    color: #ff4d6d;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#yesBtn:hover {
+    transform: scale(1.1);
+}
+
+#noBtn {
+    background: rgba(255,255,255,0.7);
+    color: #555;
+    position: absolute;
+}
+
+.success {
+    font-size: 2.5rem;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.8);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+/* Floating Hearts */
+.heart {
+    position: absolute;
+    color: rgba(255,255,255,0.8);
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {transform: translateY(100vh); opacity: 0;}
+    20% {opacity: 1;}
+    100% {transform: translateY(-10vh); opacity: 0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Will You Be My Valentine? 💖</h1>
+    <button id="yesBtn" onclick="yesClicked()">Yes 💘</button>
+    <button id="noBtn" onmouseover="moveButton()">No 😢</button>
+</div>
+
+<script>
+function yesClicked() {
+    document.body.innerHTML = `
+        <div class="container">
+            <h1 class="success">You said YES! 💕✨<br>I'm the luckiest person alive! 💖</h1>
+        </div>
+    `;
+}
+
+function moveButton() {
+    const button = document.getElementById("noBtn");
+    const x = Math.random() * (window.innerWidth - button.offsetWidth);
+    const y = Math.random() * (window.innerHeight - button.offsetHeight);
+    button.style.left = x + "px";
+    button.style.top = y + "px";
+}
+
+/* Create floating hearts */
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}, 400);
+</script>
+
+</body>
+</html>
+</html>
